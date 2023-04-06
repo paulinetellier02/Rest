@@ -16,7 +16,7 @@ import java.util.concurrent.ExecutionException;
 
 public class RegistrationActivity extends AppCompatActivity {
 
-    private EditText userName, userPassword, userEmail;
+    private EditText userName, userPassword, userEmail,userSurname;
     private Button buttonRegistration;
 
     @Override
@@ -25,6 +25,7 @@ public class RegistrationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
 
         userName = (EditText) findViewById(R.id.reg_user_name);
+        userSurname = (EditText) findViewById(R.id.reg_user_prenom);
         userEmail = (EditText) findViewById(R.id.reg_user_email);
         userPassword = (EditText) findViewById(R.id.reg_user_password);
         buttonRegistration = (Button) findViewById(R.id.btn_register_2);
