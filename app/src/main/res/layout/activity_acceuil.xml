@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AcceuilActivity">
+    tools:context=".AccueilActivity">
 
     <Button
         android:id="@+id/Connexion"
@@ -48,8 +48,11 @@
         android:id="@+id/logoGestio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/Connexion"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/logo_gestio"
-        tools:layout_editor_absoluteY="-87dp" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/logo_gestio" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

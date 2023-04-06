@@ -25,11 +25,11 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-       // userEmail = (EditText)findViewById(R.id.user_email);
-      //  userPassword = (EditText)findViewById(R.id.user_password);
-        ///buttonLogin = (Button)findViewById(R.id.Connexion);
+        userEmail = (EditText)findViewById(R.id.user_email);
+       userPassword = (EditText)findViewById(R.id.user_password);
+        buttonLogin = (Button)findViewById(R.id.Connexion);
 
-       /* userEmail.setText("");
+       userEmail.setText("");
         userPassword.setText("");
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +64,6 @@ public class LoginActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
             }
-        });*/
+        });
     }
 }
