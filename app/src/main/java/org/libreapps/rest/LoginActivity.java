@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -52,6 +53,8 @@ public class LoginActivity extends AppCompatActivity {
                     if(token.charAt(0)=='{') {
                         Log.v("LoginActivity", token);
                     }else{
+                        String []tab  = token.split(".");
+                        Log.v("TOKEN", ""+Base64.decode(tab[1], Base64.DEFAULT));
                         Param.getInstance().setToken(token);
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(intent);

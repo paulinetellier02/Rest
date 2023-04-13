@@ -176,6 +176,10 @@ public class ConnectionRest extends AsyncTask<String, Void, String> {
             parameters  = "data="+URLEncoder.encode(jsonObj.toString(), "utf-8");
             //Log.v("URL", url+" "+parameters);
         }
+        if (methode.equals("CREATE_USER")) {
+            methode = "POST";
+            url = URL + "register.php";
+        }
 
         try {
             final HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
@@ -196,10 +200,7 @@ public class ConnectionRest extends AsyncTask<String, Void, String> {
                 conn.connect();
             }
 
-            if (methode.equals("CREATE_USER")) {
-                methode = "POST";
-                url = URL + "register.php";
-            }
+
 
             is = conn.getInputStream();
             // Lit le InputStream et l'enregistre dans une string
