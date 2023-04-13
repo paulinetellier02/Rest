@@ -27,7 +27,7 @@ public class EditActivity extends AppCompatActivity {
         final EditText typeEditTxt = (EditText) findViewById(R.id.typeEditTxt);
         final EditText priceEditTxt = (EditText) findViewById(R.id.priceEditTxt);
         TextView idTxt = (TextView) findViewById(R.id.textview_id);
-        Button buttonCancel = (Button) findViewById(R.id.button_cancel);
+        Button buttonCancel = (Button) findViewById(R.id.button_retour);
         Button buttonOk = (Button) findViewById(R.id.button_ok);
 
         if(id!=0){

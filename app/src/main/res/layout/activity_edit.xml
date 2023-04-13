@@ -6,17 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".EditActivity">
 
-    <EditText
-        android:id="@+id/priceEditTxt4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:text="1.0"
-        android:textSize="14sp"
-        tools:layout_editor_absoluteX="123dp"
-        tools:layout_editor_absoluteY="476dp" />
-
     <TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="wrap_content"
@@ -46,78 +35,60 @@
     </TableLayout>
 
     <Button
-        android:id="@+id/button_cancel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="644dp"
-        android:text="Annuler"
-        app:layout_constraintEnd_toStartOf="@+id/button_ok"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+        android:id="@+id/button_agenda"
+        android:layout_width="176dp"
+        android:layout_height="50dp"
+        android:text="Agenda"
+        tools:layout_editor_absoluteX="111dp"
+        tools:layout_editor_absoluteY="258dp" />
 
     <Button
-        android:id="@+id/button_ok"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="644dp"
-        android:text="Créer"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button_cancel"
-        app:layout_constraintTop_toBottomOf="@+id/tableLayout" />
+        android:id="@+id/button_agenda2"
+        android:layout_width="176dp"
+        android:layout_height="48dp"
+        android:text="Calendrier"
+        tools:layout_editor_absoluteX="111dp"
+        tools:layout_editor_absoluteY="368dp" />
 
-    <EditText
-        android:id="@+id/typeEditTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Type"
-        android:textSize="14sp"
-        tools:layout_editor_absoluteX="123dp"
-        tools:layout_editor_absoluteY="175dp" />
+    <Button
+        android:id="@+id/button_note"
+        android:layout_width="177dp"
+        android:layout_height="51dp"
+        android:text="Note"
+        tools:layout_editor_absoluteX="109dp"
+        tools:layout_editor_absoluteY="472dp" />
+
+    <Button
+        android:id="@+id/button_rappel"
+        android:layout_width="174dp"
+        android:layout_height="49dp"
+        android:text="Rappel"
+        tools:layout_editor_absoluteX="109dp"
+        tools:layout_editor_absoluteY="580dp" />
+
+    <Button
+        android:id="@+id/button_tdl"
+        android:layout_width="176dp"
+        android:layout_height="46dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="137dp"
+        android:layout_marginBottom="38dp"
+        android:text="To do list"
+        app:layout_constraintBottom_toTopOf="@+id/button_agenda"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Titre_option" />
 
     <EditText
         android:id="@+id/Titre_option"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="169dp"
+        android:layout_height="39dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Type"
+        android:text="          Mes Options"
         android:textSize="14sp"
-        tools:layout_editor_absoluteX="123dp"
+        tools:layout_editor_absoluteX="118dp"
         tools:layout_editor_absoluteY="82dp" />
 
-    <EditText
-        android:id="@+id/priceEditTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:text="1.0"
-        android:textSize="14sp"
-        tools:layout_editor_absoluteX="123dp"
-        tools:layout_editor_absoluteY="247dp" />
-
-    <EditText
-        android:id="@+id/priceEditTxt2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:text="1.0"
-        android:textSize="14sp"
-        tools:layout_editor_absoluteX="123dp"
-        tools:layout_editor_absoluteY="324dp" />
-
-    <EditText
-        android:id="@+id/priceEditTxt3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:text="1.0"
-        android:textSize="14sp"
-        tools:layout_editor_absoluteX="123dp"
-        tools:layout_editor_absoluteY="400dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
