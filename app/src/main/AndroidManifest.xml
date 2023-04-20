@@ -15,6 +15,15 @@
         android:theme="@style/Theme.Rest"
         tools:targetApi="31">
         <activity
+            android:name=".Notes"
+            android:exported="false" />
+        <activity
+            android:name=".Calendrier"
+            android:exported="false" />
+        <activity
+            android:name=".Rappel"
+            android:exported="false" />
+        <activity
             android:name=".LoginActivity"
             android:exported="false" />
         <activity

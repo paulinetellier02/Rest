@@ -51,6 +51,8 @@
         android:layout_marginEnd="28dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_gestio" />
+        app:srcCompat="@drawable/logo_gestio"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
