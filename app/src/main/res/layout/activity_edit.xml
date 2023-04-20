@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".EditActivity">
 
+    <ImageView
+        android:id="@+id/logoGestio3"
+        android:layout_width="144dp"
+        android:layout_height="131dp"
+        android:layout_marginEnd="268dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/logo_gestio"
+        tools:layout_editor_absoluteY="0dp" />
+
     <TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="wrap_content"
@@ -38,7 +47,9 @@
         android:id="@+id/button_agenda"
         android:layout_width="182dp"
         android:layout_height="50dp"
+        android:backgroundTint="#56F44336"
         android:text="Agenda"
+        app:strokeColor="#F44336"
         tools:layout_editor_absoluteX="111dp"
         tools:layout_editor_absoluteY="258dp" />
 
@@ -46,6 +57,7 @@
         android:id="@+id/button_agenda2"
         android:layout_width="180dp"
         android:layout_height="50dp"
+        android:backgroundTint="#32F44336"
         android:text="Calendrier"
         tools:layout_editor_absoluteX="111dp"
         tools:layout_editor_absoluteY="366dp" />
@@ -54,6 +66,7 @@
         android:id="@+id/button_note"
         android:layout_width="180dp"
         android:layout_height="50dp"
+        android:backgroundTint="#3CE91E63"
         android:text="Note"
         tools:layout_editor_absoluteX="111dp"
         tools:layout_editor_absoluteY="474dp" />
@@ -62,10 +75,11 @@
         android:id="@+id/button_rappel"
         android:layout_width="180dp"
         android:layout_height="50dp"
+        android:backgroundTint="#52E91E63"
         android:text="Rappel"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="111dp"
-        tools:layout_editor_absoluteY="578dp"
-        tools:ignore="MissingConstraints" />
+        tools:layout_editor_absoluteY="578dp" />
 
     <Button
         android:id="@+id/button_tdl"
@@ -75,6 +89,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="137dp"
         android:layout_marginBottom="38dp"
+        android:backgroundTint="#7CF44336"
         android:text="To do list"
         app:layout_constraintBottom_toTopOf="@+id/button_agenda"
         app:layout_constraintEnd_toEndOf="parent"
