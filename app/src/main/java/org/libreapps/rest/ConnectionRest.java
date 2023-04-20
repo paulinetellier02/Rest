@@ -21,22 +21,23 @@ import java.util.List;
 
 public class ConnectionRest extends AsyncTask<String,Void, String> {
     private final static String URL = "https://api.munier.me/gr0/product/";
-    private JSONObject jsonObj = null;
+    private JSONObject jsonObj=null;
 
     protected String doInBackground(String... strings) {
         try {
             return get(strings[0]);
-            /* autre cours : jsonObj = new JSONObject();
+            //autre cours : jsonObj = new JSONObject();
 
-            jsonObj.put("name", "Pomme ");
-            jsonObj.put("type", " Fruit");
-            jsonObj.put("price", 3.2);
+
+            //jsonObj.put("nom",strings);
+            //jsonObj.put("prenom",strings);
+            //jsonObj.put("mot de passe",strings);
 
             Log.v("RETOUR", "POST");
 
             List<Product> listProduct = parse(get("GET"));
             for (int i=0;i<listProduct.size();i++){
-                Log.v("PRODUIT ", listProduct.get(i).getName()+" "+listProduct.get(i).getType()+" "+listProduct.get(i).getPrice()+"\n");
+                Log.v("adhérent ", listProduct.get(i).getName()+" "+listProduct.get(i).getType()+" "+listProduct.get(i).getPrice()+"\n");
             }
 
 
@@ -123,8 +124,8 @@ public class ConnectionRest extends AsyncTask<String,Void, String> {
         return response.toString();
     }
 
-}
-*/
+}*/
+
 import android.os.AsyncTask;
 import android.util.Log;
 
