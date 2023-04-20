@@ -10,16 +10,17 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import org.libreapps.rest.obj.Product;
+import org.libreapps.rest.obj.User;
 
 import java.util.ArrayList;
 
 public class CustomListAdapter extends BaseAdapter {
 
-    private ArrayList<Product> listData;
+    private ArrayList<User> listData;
     private LayoutInflater layoutInflater;
     private Context context;
 
-    public CustomListAdapter(Context aContext, ArrayList<Product> listData) {
+    public CustomListAdapter(Context aContext, ArrayList<User> listData) {
         this.context = aContext;
         this.listData = listData;
         layoutInflater = LayoutInflater.from(aContext);
@@ -30,10 +31,11 @@ public class CustomListAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = layoutInflater.inflate(R.layout.activity_custom_list_view, null);
             holder = new ViewHolder();
-            holder.id = (TextView) convertView.findViewById(R.id.textId);
-            holder.name = (TextView) convertView.findViewById(R.id.textName);
-            holder.type = (TextView) convertView.findViewById(R.id.textType);
-            holder.price = (TextView) convertView.findViewById(R.id.textPrice);
+            holder.adresse_mail = (TextView) convertView.findViewById(R.id.textId);
+            holder.mdp = (TextView) convertView.findViewById(R.id.textPrice);
+            holder.nom = (TextView) convertView.findViewById(R.id.textName);
+            holder.prenom = (TextView) convertView.findViewById(R.id.textType);
+            holder.date_naissance = (TextView) convertView.findViewById(R.id.textPrice);
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -44,21 +46,24 @@ public class CustomListAdapter extends BaseAdapter {
             convertView.setBackgroundColor(Color.rgb(150,245,170));
         }
 
-        Product product = this.listData.get(position);
-        holder.id.setText(""+product.getId());
-        holder.name.setText(product.getName());
-        holder.type.setText(product.getType());
-        holder.price.setText(""+product.getPrice());
-        Log.v("CUSTOM",""+product.getName()+" "+product.getType());
+        User user = this.listData.get(position);
+        holder.adresse_mail.setText(""+user.getAdresse_mail());
+        holder.mdp.setText(user.getMdp());
+        holder.nom.setText(user.getNom());
+        holder.prenom.setText(""+user.getPrenom());
+        holder.date_naissance.setText(""+user.getDate_naissance());
+        Log.v("CUSTOM",""+user.getNom()+" "+user.getPrenom()+" "+user.getAdresse_mail()+" bien registré !");
 
         return convertView;
     }
 
     static class ViewHolder {
-        TextView id;
-        TextView name;
-        TextView type;
-        TextView price;
+        TextView adresse_mail;
+        TextView mdp;
+        TextView nom;
+        TextView prenom;
+        TextView date_naissance;
+
     }
 
     public int getCount() {

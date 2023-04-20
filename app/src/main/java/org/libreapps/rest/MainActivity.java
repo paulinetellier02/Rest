@@ -55,6 +55,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import org.libreapps.rest.obj.Product;
+import org.libreapps.rest.obj.User;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
@@ -67,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList<Product> listData = getListData();
+        ArrayList<User> listData = getListData();
         final ListView listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(new CustomListAdapter(this, listData));
 
@@ -76,12 +77,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> a, View v, int position, long id) {
                 Object o = listView.getItemAtPosition(position);
-                Product upload = (Product) o;
+                User upload = (User) o;
                 Intent intent = new Intent(MainActivity.this, EditActivity.class);
-                intent.putExtra("id", upload.getId());
-                intent.putExtra("name", upload.getName());
-                intent.putExtra("type", upload.getType());
-                intent.putExtra("price", upload.getPrice());
+                intent.putExtra("Mot de passe", upload.getMdp());
+                intent.putExtra("Nom", upload.getNom());
+                intent.putExtra("Prenom", upload.getPrenom());
+                intent.putExtra("Adresse mail", upload.getAdresse_mail());
+                intent.putExtra("Date de naissance", upload.getDate_naissance());
                 startActivity(intent);
             }
         });
@@ -96,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public ArrayList<Product> getListData(){
+    public ArrayList<User> getListData(){
         try{
             ConnectionRest connectionRest = new ConnectionRest();
             connectionRest.execute("GET");

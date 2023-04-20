@@ -63,14 +63,14 @@ public class EditActivity extends AppCompatActivity {
             public void onClick(View v) {
                 try {
                     ConnectionRest connectionRest = new ConnectionRest();
-                    JSONObject product = new JSONObject();
+                    JSONObject user = new JSONObject();
                     if(id!=0) {
-                        product.put("id", id);
+                        user.put("id", id);
                     }
-                    product.put("name", nameEditTxt.getText().toString());
-                    product.put("type", typeEditTxt.getText().toString());
-                    product.put("price", Double.parseDouble(priceEditTxt.getText().toString()));
-                    connectionRest.setObj(product); //parfois JsonObj
+                    user.put("nom", nameEditTxt.getText().toString());
+                    user.put("type", typeEditTxt.getText().toString());
+                    user.put("prenom", Double.parseDouble(priceEditTxt.getText().toString()));
+                    connectionRest.setObj(user); //parfois JsonObj
 
                     if(id!=0) { // Modification
                         connectionRest.execute("PUT");
