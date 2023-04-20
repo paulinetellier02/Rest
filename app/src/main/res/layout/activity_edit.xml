@@ -54,7 +54,7 @@
         tools:layout_editor_absoluteY="258dp" />
 
     <Button
-        android:id="@+id/button_agenda2"
+        android:id="@+id/button_calendrier"
         android:layout_width="180dp"
         android:layout_height="50dp"
         android:backgroundTint="#32F44336"
