@@ -14,12 +14,32 @@ import android.content.Intent;
         import org.json.JSONObject;
 
 public class EditActivity extends AppCompatActivity {
+    private Button button_Tdl,button_Rappel,button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
-        final int id = getIntent().getIntExtra("id", 0);
+        button_Tdl = (Button) findViewById(R.id.button_tdl);
+
+        button_Tdl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    setContentView(R.layout.activity_login);
+                } finally {
+
+                }
+                ;
+            }
+
+            ;
+        });
+
+
+
+
+        /*final int id = getIntent().getIntExtra("id", 0);
         String name = getIntent().getStringExtra("name");
         String type = getIntent().getStringExtra("type");
         double price = getIntent().getDoubleExtra("price", 1.0);
@@ -27,7 +47,7 @@ public class EditActivity extends AppCompatActivity {
         final EditText typeEditTxt = (EditText) findViewById(R.id.typeEditTxt);
         final EditText priceEditTxt = (EditText) findViewById(R.id.priceEditTxt);
         TextView idTxt = (TextView) findViewById(R.id.textview_id);
-        Button buttonCancel = (Button) findViewById(R.id.button_cancel);
+        Button buttonCancel = (Button) findViewById(R.id.button_retour);
         Button buttonOk = (Button) findViewById(R.id.button_ok);
 
         if(id!=0){
@@ -58,7 +78,8 @@ public class EditActivity extends AppCompatActivity {
             }
         });
 
-        buttonOk.setOnClickListener(new View.OnClickListener() {
+
+        button_tdl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
@@ -84,5 +105,7 @@ public class EditActivity extends AppCompatActivity {
                 }
             }
         });
+
     }
-}
+}*/
+    };}
