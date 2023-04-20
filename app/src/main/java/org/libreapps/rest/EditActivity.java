@@ -14,7 +14,7 @@ import android.content.Intent;
         import org.json.JSONObject;
 
 public class EditActivity extends AppCompatActivity {
-    private Button button_Tdl,button_Rappel,button;
+    private Button button_Tdl,button_Agenda;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,18 +26,27 @@ public class EditActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    setContentView(R.layout.activity_login);
+                    setContentView(R.layout.activity_todolist);
                 } finally {
-
                 }
                 ;
             }
-
             ;
         });
 
+        button_Agenda = (Button) findViewById(R.id.button_agenda);
 
-
+        button_Agenda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    setContentView(R.layout.activity_agenda);
+                } finally {
+                }
+                ;
+            }
+            ;
+        });
 
         /*final int id = getIntent().getIntExtra("id", 0);
         String name = getIntent().getStringExtra("name");
