@@ -74,9 +74,9 @@ public class EditActivity extends AppCompatActivity {
                 if(id!=0){ // Suppression
                     try {
                         ConnectionRest connectionRest = new ConnectionRest();
-                        JSONObject product = new JSONObject();
-                        product.put("id", id);
-                        connectionRest.setObj(product); //parfois JsonObj
+                        JSONObject user = new JSONObject();
+                        user.put("id", id);
+                        connectionRest.setObj(user); //parfois JsonObj
                         connectionRest.execute("DELETE");
                     } catch (JSONException e) {
                         e.printStackTrace();

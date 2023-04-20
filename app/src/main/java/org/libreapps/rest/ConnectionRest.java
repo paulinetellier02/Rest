@@ -133,6 +133,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.libreapps.rest.obj.Product;
+import org.libreapps.rest.obj.User;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -148,7 +149,7 @@ import java.util.ArrayList;
 public class ConnectionRest extends AsyncTask<String, Void, String> {
     private final static String URL = "https://api.munier.me/jwt/";
     private JSONObject jsonObj = null;
-    private String action = "product";
+    private String action = "user";
 
     @Override
     protected String doInBackground(String... strings) {
@@ -224,14 +225,14 @@ public class ConnectionRest extends AsyncTask<String, Void, String> {
         return response.toString();
     }
 
-    public ArrayList<Product> parse(final String json) {
+    public ArrayList<User> parse(final String json) {
         try {
-            final ArrayList<Product> products = new ArrayList<>();
-            final JSONArray jProductArray = new JSONArray(json);
-            for (int i = 0; i < jProductArray.length(); i++) {
-                products.add(new Product(jProductArray.optJSONObject(i)));
+            final ArrayList<User> Users = new ArrayList<>();
+            final JSONArray jUserArray = new JSONArray(json);
+            for (int i = 0; i < jUserArray.length(); i++) {
+                Users.add(new User(jUserArray.optJSONObject(i)));
             }
-            return products;
+            return Users;
         } catch (JSONException e) {
             Log.v("TAG","[JSONException] e : " + e.getMessage());
         }
