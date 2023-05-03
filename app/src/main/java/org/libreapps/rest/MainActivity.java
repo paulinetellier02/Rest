@@ -54,7 +54,6 @@ import android.view.MenuItem;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import org.libreapps.rest.obj.Product;
 import org.libreapps.rest.obj.User;
 
 import java.util.ArrayList;

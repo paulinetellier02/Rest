@@ -14,7 +14,7 @@ import android.content.Intent;
         import org.json.JSONObject;
 
 public class EditActivity extends AppCompatActivity {
-    private Button button_Tdl,button_Agenda;
+    private Button button_Tdl,button_Agenda,button_Notes,button_Calendrier,button_Rappel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,11 +25,9 @@ public class EditActivity extends AppCompatActivity {
         button_Tdl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
                     setContentView(R.layout.activity_todolist);
-                } finally {
-                }
-                ;
+
+
             }
             ;
         });
@@ -39,11 +37,36 @@ public class EditActivity extends AppCompatActivity {
         button_Agenda.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
+
                     setContentView(R.layout.activity_agenda);
-                } finally {
-                }
-                ;
+            }
+            ;
+        });
+
+        button_Rappel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setContentView(R.layout.activity_rappel);
+
+
+            }
+            ;
+        });
+        button_Calendrier.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setContentView(R.layout.activity_calendrier);
+
+
+            }
+            ;
+        });
+        button_Notes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setContentView(R.layout.activity_notes);
+
+
             }
             ;
         });

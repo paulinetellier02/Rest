@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import org.libreapps.rest.obj.Product;
 import org.libreapps.rest.obj.User;
 
 import java.util.ArrayList;

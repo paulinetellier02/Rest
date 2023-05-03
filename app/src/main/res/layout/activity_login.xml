@@ -6,51 +6,81 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <Button
-        android:id="@+id/Connexion"
-        android:layout_width="170dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="56dp"
-        android:background="#FEE3CE"
-        android:radius="100dp"
-        android:text="SE CONNECTER"
-        android:textColor="#D75F1B"
-
-
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.468"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.563" />
-
-
-    <Button
-        android:id="@+id/Inscription"
-        android:layout_width="168dp"
-        android:layout_height="102dp"
-        android:layout_marginTop="56dp"
-        android:background="#EC9D68"
-        android:text="S'INSCRIRE"
-        android:textColor="#D75F1B"
-        app:iconTint="#EC9D68"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.473"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.853"
-        app:rippleColor="#EC9D68"
-        app:strokeColor="#EC9D68" />
-
-    <ImageView
-        android:id="@+id/logoGestio"
+    <EditText
+        android:id="@+id/user_password"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Mot de passe"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/logo_gestio"
-        tools:layout_editor_absoluteY="-87dp" />
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.536" />
+
+    <EditText
+        android:id="@+id/user_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="E-Mail"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.379" />
+
+    <ImageView
+        android:id="@+id/logoGestio7"
+        android:layout_width="144dp"
+        android:layout_height="131dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="264dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_gestio" />
+
+
+    <Button
+        android:id="@+id/button_connexion"
+        android:layout_width="141dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="56dp"
+        android:background="#E1F8E1CF"
+        android:radius="100dp"
+        android:text="CONNEXION"
+        android:textColor="#D75F1B"
+
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.752" />
+
+    <Button
+        android:id="@+id/test"
+        android:layout_width="141dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="56dp"
+        android:background="#E1F8E1CF"
+        android:radius="100dp"
+        android:text="CONNEXION"
+        android:textColor="#D75F1B"
+
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.162"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.973" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

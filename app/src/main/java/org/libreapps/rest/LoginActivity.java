@@ -1,10 +1,10 @@
+
 package org.libreapps.rest;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -26,11 +26,11 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        //userEmail = (EditText)findViewById(R.id.user_email);
-       //userPassword = (EditText)findViewById(R.id.user_password);
-        buttonLogin = (Button)findViewById(R.id.Connexion);
+        userEmail = (EditText)findViewById(R.id.user_email);
+        userPassword = (EditText)findViewById(R.id.user_password);
+        buttonLogin = (Button)findViewById(R.id.button_connexion);
 
-       userEmail.setText("");
+        userEmail.setText("");
         userPassword.setText("");
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
@@ -38,8 +38,8 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 try {
                     JSONObject jAuth = new JSONObject();
-                    //jAuth.put("email", userEmail.getText().toString());
-                    //jAuth.put("password", userPassword.getText().toString());
+                    jAuth.put("email", userEmail.getText().toString());
+                    jAuth.put("password", userPassword.getText().toString());
                     jAuth.put("app", "MNA");
 
                     Log.v("LoginActivity", userEmail.getText().toString()+" "+userPassword.getText().toString());
@@ -53,10 +53,8 @@ public class LoginActivity extends AppCompatActivity {
                     if(token.charAt(0)=='{') {
                         Log.v("LoginActivity", token);
                     }else{
-                        String []tab  = token.split(".");
-                        Log.v("TOKEN", ""+Base64.decode(tab[1], Base64.DEFAULT));
                         Param.getInstance().setToken(token);
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        Intent intent = new Intent(LoginActivity.this, EditActivity.class);
                         startActivity(intent);
                     }
                 } catch (JSONException e) {

@@ -95,6 +95,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
         android:text="S'ENREGISTRER"
+        android:textColor="#D75F1B"
         app:iconTint="#E1F8E1CF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -104,47 +105,6 @@
         app:layout_constraintVertical_bias="0.87" />
 
 
-
-    <Spinner
-        android:id="@+id/jours"
-        android:layout_width="80dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginBottom="174dp"
-        android:entries="@array/days"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.151"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:layout_constraintLeft_creator="0" />
-
-    <Spinner
-        android:id="@+id/mois"
-        android:layout_width="80dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="37dp"
-        android:layout_marginBottom="44dp"
-        android:entries="@array/months"
-        app:layout_constraintBottom_toTopOf="@+id/btn_register_2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.118"
-        app:layout_constraintStart_toEndOf="@+id/jours"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <Spinner
-        android:id="@+id/annee"
-        android:layout_width="113dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="37dp"
-        android:layout_marginBottom="45dp"
-        android:entries="@array/year"
-        app:layout_constraintBottom_toTopOf="@+id/btn_register_2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/mois"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

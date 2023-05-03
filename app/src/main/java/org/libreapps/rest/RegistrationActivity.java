@@ -16,7 +16,7 @@ import java.util.concurrent.ExecutionException;
 
 public class RegistrationActivity extends AppCompatActivity {
 
-    private EditText userName, userPassword, userEmail,userSurname;
+    private EditText userName, userPassword, userEmail;
     private Button buttonRegistration;
 
     @Override
@@ -25,7 +25,6 @@ public class RegistrationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
 
         userName = (EditText) findViewById(R.id.reg_user_name);
-        userSurname = (EditText) findViewById(R.id.reg_user_prenom);
         userEmail = (EditText) findViewById(R.id.reg_user_email);
         userPassword = (EditText) findViewById(R.id.reg_user_password);
         buttonRegistration = (Button) findViewById(R.id.btn_register_2);
@@ -39,7 +38,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     jsonAuthentification.put("name", userName.getText());
                     jsonAuthentification.put("email", userEmail.getText());
                     jsonAuthentification.put("password", userPassword.getText());
-                    jsonAuthentification.put("licence", "MNA-1A-5U-29");
+                    jsonAuthentification.put("licence", "<LICENCE>");
                     connectionRest.setObj(jsonAuthentification);
                     connectionRest.execute("CREATE_USER");
                     String token = connectionRest.get();
@@ -60,8 +59,5 @@ public class RegistrationActivity extends AppCompatActivity {
                 }
             }
         });
-
-
-
     }
 }

@@ -7,7 +7,7 @@
     tools:context=".AccueilActivity">
 
     <Button
-        android:id="@+id/Connexion"
+        android:id="@+id/button_connexion"
         android:layout_width="170dp"
         android:layout_height="100dp"
         android:layout_marginTop="56dp"
