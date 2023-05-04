@@ -9,7 +9,7 @@ import android.content.Intent;
         import android.widget.Button;
 
 public class EditActivity extends AppCompatActivity {
-    private Button button_Tdl,button_Agenda,button_Notes,button_Calendrier,button_Rappel;
+    private Button button_Tdl,button_Notes,button_Calendrier,button_Rappel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,18 +29,6 @@ public class EditActivity extends AppCompatActivity {
             ;
         });
 
-        button_Agenda = (Button) findViewById(R.id.button_rappel);
-
-        button_Agenda.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(EditActivity.this, Agenda.class);
-                startActivity(intent);
-            }
-
-            ;
-        });
 
         button_Rappel = (Button) findViewById(R.id.button_rappel);
         button_Rappel.setOnClickListener(new View.OnClickListener() {
