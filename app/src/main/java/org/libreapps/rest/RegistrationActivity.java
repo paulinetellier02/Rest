@@ -38,7 +38,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     jsonAuthentification.put("name", userName.getText());
                     jsonAuthentification.put("email", userEmail.getText());
                     jsonAuthentification.put("password", userPassword.getText());
-                    jsonAuthentification.put("licence", "<LICENCE>");
+                    jsonAuthentification.put("licence", "MNA-1A-5U-29");
                     connectionRest.setObj(jsonAuthentification);
                     connectionRest.execute("CREATE_USER");
                     String token = connectionRest.get();
@@ -46,7 +46,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     if(token.charAt(0)=='{') {
                         Log.v("LoginActivity", token);
                     }else {
-                        Intent intent = new Intent(RegistrationActivity.this, MainActivity.class);
+                        Intent intent = new Intent(RegistrationActivity.this, EditActivity.class);
                         intent.putExtra("token", token);
                         startActivity(intent);
                     }

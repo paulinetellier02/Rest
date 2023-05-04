@@ -23,7 +23,8 @@ public class Notes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                    setContentView(R.layout.activity_ajout_note);
+                Intent intent = new Intent(Notes.this, AjoutNote.class);
+                startActivity(intent);
                 ;
             };
 

@@ -22,7 +22,8 @@ public class Rappel extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    setContentView(R.layout.activity_ajout_rappel);
+                    Intent intent = new Intent(Rappel.this, AjoutRappel.class);
+                    startActivity(intent);
                 } finally {
 
                 }

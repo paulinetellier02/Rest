@@ -64,23 +64,5 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.752" />
 
-    <Button
-        android:id="@+id/test"
-        android:layout_width="141dp"
-        android:layout_height="73dp"
-        android:layout_marginTop="56dp"
-        android:background="#E1F8E1CF"
-        android:radius="100dp"
-        android:text="CONNEXION"
-        android:textColor="#D75F1B"
-
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.162"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.973" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -30,7 +30,8 @@ public class Calendrier extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    setContentView(R.layout.activity_ajout_calendier);
+                    Intent intent = new Intent(Calendrier.this, AjoutCalendrier.class);
+                    startActivity(intent);
                 } finally {
 
                 }

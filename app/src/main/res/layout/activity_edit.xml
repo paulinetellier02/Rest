@@ -45,14 +45,14 @@
     </TableLayout>
 
     <Button
-        android:id="@+id/button_agenda"
+        android:id="@+id/button_rappel"
         android:layout_width="182dp"
         android:layout_height="50dp"
         android:layout_marginStart="112dp"
         android:layout_marginTop="51dp"
         android:layout_marginEnd="117dp"
         android:backgroundTint="#56F44336"
-        android:text="Agenda"
+        android:text="Rappel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_tdl"
@@ -63,40 +63,28 @@
         android:layout_width="186dp"
         android:layout_height="55dp"
         android:layout_marginStart="112dp"
-        android:layout_marginTop="51dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="117dp"
         android:backgroundTint="#32F44336"
         android:text="Calendrier"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_agenda" />
+        app:layout_constraintTop_toBottomOf="@+id/button_rappel" />
 
     <Button
         android:id="@+id/button_note"
         android:layout_width="184dp"
         android:layout_height="54dp"
         android:layout_marginStart="112dp"
-        android:layout_marginTop="51dp"
+        android:layout_marginTop="48dp"
         android:layout_marginEnd="117dp"
         android:backgroundTint="#3CE91E63"
         android:text="Note"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button_calendrier" />
-
-    <Button
-        android:id="@+id/button_rappel"
-        android:layout_width="184dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="51dp"
-        android:layout_marginEnd="117dp"
-        android:backgroundTint="#52E91E63"
-        android:text="Rappel"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_note"
-        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/button_tdl"
@@ -108,7 +96,7 @@
         android:layout_marginBottom="49dp"
         android:backgroundTint="#7CF44336"
         android:text="To do list"
-        app:layout_constraintBottom_toTopOf="@+id/button_agenda"
+        app:layout_constraintBottom_toTopOf="@+id/button_rappel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.153"
         app:layout_constraintStart_toStartOf="parent"
