@@ -9,7 +9,7 @@ import android.content.Intent;
         import android.widget.Button;
 
 public class EditActivity extends AppCompatActivity {
-    private Button button_Tdl,button_Notes,button_Calendrier,button_Rappel;
+    private Button button_Tdl,button_Agenda,button_Notes,button_Calendrier,button_Rappel,button_creerTdl;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -1,0 +1,126 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_ajout_tld"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:foregroundTint="#F3DFDF"
+    android:textColor="#D75F1B"
+    android:padding="16dp"
+    tools:context=".AjoutTdl">
+
+    <ImageView
+        android:id="@+id/logoGestio10"
+        android:layout_width="148dp"
+        android:layout_height="120dp"
+        android:layout_marginEnd="268dp"
+        android:translationX="-15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_gestio" />
+
+    <TextView
+        android:id="@+id/titre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="#F38888"
+        android:drawableTint="#F8A8A8"
+        android:text="Ajouter une TLD"
+        android:textColorHint="#934242"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:translationY="50dp" />
+
+    <TextView
+        android:id="@+id/nomLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titre"
+        android:layout_marginTop="119dp"
+        android:text="Nom de la TLD :"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/nomTLD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nomLabel"
+        android:layout_marginTop="12dp"
+        android:hint="Saisir le nom de la TLD"
+        android:inputType="text" />
+
+    <TextView
+        android:id="@+id/legendeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nomTLD"
+        android:layout_marginTop="41dp"
+        android:text="Légende :"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/legendeTLD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/legendeLabel"
+        android:layout_marginTop="12dp"
+        android:hint="Saisir une légende pour la TLD"
+        android:inputType="text" />
+
+    <LinearLayout
+        android:id="@+id/tachesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/legendeTLD"
+        android:layout_marginTop="43dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tachesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tâches :"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <CheckBox
+            android:id="@+id/tache1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tâche 1" />
+
+        <CheckBox
+            android:id="@+id/tache2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tâche 2" />
+
+        <CheckBox
+            android:id="@+id/tache3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tâche 3" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_ajouter_tdl"
+        android:layout_width="74dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="158dp"
+        android:layout_marginEnd="159dp"
+        android:layout_marginBottom="41dp"
+        android:text="OK"
+        android:textColor="#D75F1B"
+        android:textSize="14sp"
+        android:translationY="625dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</RelativeLayout>

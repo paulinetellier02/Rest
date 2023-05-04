@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Rest"
         tools:targetApi="31">
         <activity
+            android:name=".AjoutTdl"
+            android:exported="false" />
+        <activity
             android:name=".AjoutNote"
             android:exported="false" />
         <activity
@@ -22,6 +25,9 @@
             android:exported="false" />
         <activity
             android:name=".AjoutRappel"
+            android:exported="false" />
+        <activity
+            android:name=".Agenda"
             android:exported="false" />
         <activity
             android:name=".Todolist"
