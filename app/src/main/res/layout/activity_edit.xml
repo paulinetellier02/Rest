@@ -104,7 +104,7 @@
 
     <EditText
         android:id="@+id/Titre_option"
-        android:layout_width="203dp"
+        android:layout_width="100dp"
         android:layout_height="61dp"
         android:layout_marginStart="54dp"
         android:layout_marginTop="68dp"
@@ -113,6 +113,7 @@
         android:inputType="textPersonName"
         android:text="Mes Options"
         android:textSize="18sp"
+        android:translationX="-90dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.676"
         app:layout_constraintStart_toEndOf="@+id/logoGestio3"

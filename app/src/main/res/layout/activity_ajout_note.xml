@@ -1,22 +1,94 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ajoutNoteLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AjoutNote">
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/logoGestio9"
-        android:layout_width="144dp"
-        android:layout_height="131dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="264dp"
-        android:layout_marginBottom="147dp"
-        app:layout_constraintBottom_toTopOf="@+id/reg_user_email2"
+        android:layout_width="148dp"
+        android:layout_height="120dp"
+        android:layout_marginEnd="268dp"
+        android:translationX="300dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logo_gestio" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/titreLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Titre de la note:"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/titreEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/titreLabel"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginRight="20dp" />
+
+    <TextView
+        android:id="@+id/contenuLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contenu de la note:"
+        android:textSize="20sp"
+        android:layout_below="@id/titreEditText"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"/>
+
+    <EditText
+        android:id="@+id/contenuEditText"
+        android:layout_width="394dp"
+        android:layout_height="465dp"
+        android:layout_below="@id/contenuLabel"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:inputType="textMultiLine"
+        android:minLines="6" />
+
+    <Button
+        android:id="@+id/creerNoteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/contenuEditText"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="85dp"
+        android:layout_marginRight="144dp"
+        android:text="Créer la note" />
+
+</RelativeLayout>
+
+
+
+    <!--<?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".AjoutNote">
+
+        <ImageView
+            android:id="@+id/logoGestio9"
+            android:layout_width="99dp"
+            android:layout_height="96dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="264dp"
+            android:layout_marginBottom="147dp"
+            app:layout_constraintBottom_toTopOf="@+id/reg_user_email2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logo_gestio" />
+    </androidx.constraintlayout.widget.ConstraintLayout>

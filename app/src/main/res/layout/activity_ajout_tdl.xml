@@ -32,6 +32,7 @@
         android:textColorHint="#934242"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:translationX="10dp"
         android:translationY="50dp" />
 
     <TextView
