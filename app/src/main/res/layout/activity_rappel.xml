@@ -1,53 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/button_creer_rappel"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Rappel">
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/pastel_pink">
+
+
 
     <TextView
-        android:id="@+id/textRappel"
-        android:layout_width="wrap_content"
-        android:layout_height="27dp"
-        android:layout_marginTop="45dp"
-        android:text="Rappel"
-        android:textColor="#0C0C0C"
+        android:id="@+id/textViewRappel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/rappel_liste"
+        android:textColor="@android:color/white"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/list_rappel" />
+        android:layout_marginBottom="8dp"/>
 
-    <ImageView
-        android:id="@+id/logoGestio3"
-        android:layout_width="144dp"
-        android:layout_height="131dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="2dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_gestio" />
-
-    <Button
-        android:id="@+id/button_ajouter_tdl"
-        android:layout_width="163dp"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginStart="107dp"
-        android:layout_marginEnd="110dp"
-        android:layout_marginBottom="64dp"
-        android:text="Ajouter"
-        android:textColor="#D75F1B"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.193"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_weight="1">
 
-    <ListView
-        android:id="@+id/list_rappel"
+        <TableLayout
+            android:id="@+id/tableLayoutRappels"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="*">
+
+            <!-- Les rappels seront ajoutés dynamiquement ici -->
+
+        </TableLayout>
+
+    </ScrollView>
+
+</LinearLayout>
+    <!--<?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/button_creer_rappel"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginStart="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:context=".Rappel">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/textRappel"
+            android:layout_width="wrap_content"
+            android:layout_height="27dp"
+            android:text="Rappel"
+            android:textColor="#0C0C0C"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="85dp" />
+        <TextView
+            android:id="@+id/titre_calendrier"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableTint="#FF8D8D"
+            android:gravity="center"
+            android:text="Vos rappels"
+            android:textColor="#FF8D8D"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:translationY="40dp" />
+
+        <ImageView
+            android:id="@+id/logoGestio3"
+            android:layout_width="107dp"
+            android:layout_height="106dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logo_gestio" />
+
+        <Button
+            android:id="@+id/button_ajouter_rappel"
+            android:layout_width="163dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="107dp"
+            android:layout_marginEnd="110dp"
+            android:layout_marginBottom="64dp"
+            android:text="Créer un rappel"
+            android:textColor="#D75F1B"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.193"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>-->

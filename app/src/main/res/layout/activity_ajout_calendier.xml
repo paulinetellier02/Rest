@@ -1,22 +1,63 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AjoutCalendrier">
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:translationY="0dp">
 
-    <ImageView
-        android:id="@+id/logoGestio8"
-        android:layout_width="144dp"
-        android:layout_height="131dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="264dp"
-        android:layout_marginBottom="147dp"
-        app:layout_constraintBottom_toTopOf="@+id/reg_user_email2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_gestio" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView_nom_evenement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nom de l'événement"
+        android:translationY="0dp" />
+
+    <EditText
+        android:id="@+id/editText_nom_evenement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Entrez le nom de l'événement"
+        android:translationY="0dp" />
+
+    <TextView
+        android:id="@+id/textView_date_evenement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Date et heure de l'événement"
+        android:translationY="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="482dp"
+        android:orientation="horizontal"
+        android:translationY="10dp">
+
+        <DatePicker
+            android:id="@+id/datePicker_evenement"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:translationX="0dp"
+            android:translationY="10dp" />
+
+        <TimePicker
+            android:id="@+id/timePicker_evenement"
+            android:layout_width="6dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:translationX="-10dp"
+            android:translationY="10dp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_creer_evenement"
+        android:layout_width="91dp"
+        android:layout_height="wrap_content"
+        android:text="ok"
+        android:translationX="270dp"
+        android:translationY="-70dp" />
+
+</LinearLayout>

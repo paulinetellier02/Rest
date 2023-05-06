@@ -17,7 +17,7 @@ import java.util.concurrent.ExecutionException;
 public class RegistrationActivity extends AppCompatActivity {
 
     private EditText userName, userPassword, userEmail;
-    private Button buttonRegistration;
+    private Button btn_Register_2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +27,9 @@ public class RegistrationActivity extends AppCompatActivity {
         userName = (EditText) findViewById(R.id.reg_user_name);
         userEmail = (EditText) findViewById(R.id.reg_user_email);
         userPassword = (EditText) findViewById(R.id.reg_user_password);
-        buttonRegistration = (Button) findViewById(R.id.btn_register_2);
+        btn_Register_2 = (Button) findViewById(R.id.btn_register_2);
 
-        buttonRegistration.setOnClickListener(new View.OnClickListener() {
+        btn_Register_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
@@ -38,7 +38,7 @@ public class RegistrationActivity extends AppCompatActivity {
                     jsonAuthentification.put("name", userName.getText());
                     jsonAuthentification.put("email", userEmail.getText());
                     jsonAuthentification.put("password", userPassword.getText());
-                    jsonAuthentification.put("licence", "MNA-1A-5U-29");
+                    jsonAuthentification.put("licence", "MNA-1A-5U-30");//licence Adèle
                     connectionRest.setObj(jsonAuthentification);
                     connectionRest.execute("CREATE_USER");
                     String token = connectionRest.get();

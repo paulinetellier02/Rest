@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Rest</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
@@ -125,4 +125,19 @@
 
 
     </string-array>
+
+
+        <string name="app_name" tools:ignore="DuplicateDefinition">Rest</string>
+
+        <!-- Textes -->
+        <string name="legende_hint">Légende du rappel</string>
+        <string name="periodicite_unefois">Une fois</string>
+        <string name="periodicite_touslesjours">Tous les jours</string>
+        <string name="creer_rappel_button">Créer le rappel</string>
+
+        <!-- Descriptions -->
+        <string name="logo_description">logoGestio3</string>
+
+
 </resources>
+
