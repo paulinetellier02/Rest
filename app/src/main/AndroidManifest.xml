@@ -30,9 +30,7 @@
         <activity
             android:name=".Todolist"
             android:exported="false" />
-        <activity
-            android:name=".AjoutNote"
-            android:exported="false" />
+
         <activity
             android:name=".Calendrier"
             android:exported="false" />
@@ -51,6 +49,9 @@
         <activity
             android:name=".EditActivity"
             android:exported="false" />
+        <activity
+        android:name=".Notes"
+        android:exported="false" />
         <activity
             android:name=".AccueilActivity"
             android:exported="true"

@@ -6,7 +6,7 @@ android:layout_height="match_parent"
 android:maxHeight="45dp">
 
 <TextView
-    android:id="@+id/textId"
+    android:id="@+id/textTitreNote"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginStart="16dp"
@@ -19,12 +19,12 @@ android:maxHeight="45dp">
     android:text="ID"
     android:textSize="12sp"
     app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toStartOf="@+id/textName"
+    app:layout_constraintEnd_toStartOf="@+id/textNote"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 
 <TextView
-    android:id="@+id/textName"
+    android:id="@+id/textNote"
     android:layout_width="250dp"
     android:layout_height="wrap_content"
     android:layout_marginTop="8dp"
@@ -36,7 +36,7 @@ android:maxHeight="45dp">
     android:textSize="18sp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toStartOf="@+id/textType"
-    app:layout_constraintStart_toEndOf="@+id/textId"
+    app:layout_constraintStart_toEndOf="@+id/textTitreNote"
     app:layout_constraintTop_toTopOf="parent" />
 
 <TextView
@@ -66,7 +66,7 @@ android:maxHeight="45dp">
     android:textSize="12sp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toStartOf="@+id/textPrice"
-    app:layout_constraintStart_toEndOf="@+id/textName"
+    app:layout_constraintStart_toEndOf="@+id/textNote"
     app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

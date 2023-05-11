@@ -13,13 +13,13 @@ import org.libreapps.rest.obj.User;
 
 import java.util.ArrayList;
 
-public class CustomListAdapter extends BaseAdapter {
+public class CustomListAdapter_tdl extends BaseAdapter {
 
     private ArrayList<User> listData;
     private LayoutInflater layoutInflater;
     private Context context;
 
-    public CustomListAdapter(Context aContext, ArrayList<User> listData) {
+    public CustomListAdapter_tdl(Context aContext, ArrayList<User> listData) {
         this.context = aContext;
         this.listData = listData;
         layoutInflater = LayoutInflater.from(aContext);
@@ -30,9 +30,9 @@ public class CustomListAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = layoutInflater.inflate(R.layout.activity_custom_list_view, null);
             holder = new ViewHolder();
-            holder.adresse_mail = (TextView) convertView.findViewById(R.id.textId);
+            holder.adresse_mail = (TextView) convertView.findViewById(R.id.textTitreNote);
             holder.mdp = (TextView) convertView.findViewById(R.id.textPrice);
-            holder.nom = (TextView) convertView.findViewById(R.id.textName);
+            holder.nom = (TextView) convertView.findViewById(R.id.textNote);
             holder.prenom = (TextView) convertView.findViewById(R.id.textType);
             holder.date_naissance = (TextView) convertView.findViewById(R.id.textPrice);
             convertView.setTag(holder);

@@ -115,6 +115,7 @@ public class ConnectionRest extends AsyncTask<String, Void, String> {
     }
     public void setAction(String monAction){ this.action = monAction;}
 
+
     @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);

@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
         ArrayList<User> listData = getListData();
         final ListView listView = (ListView) findViewById(R.id.listView);
-        listView.setAdapter(new CustomListAdapter(this, listData));
+        listView.setAdapter(new CustomListAdapter_tdl(this, listData));
 
         // When the user clicks on the ListItem
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

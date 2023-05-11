@@ -8,6 +8,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.libreapps.rest.obj.Note;
+import org.libreapps.rest.obj.Profil;
+
+import java.util.*;
+import java.util.concurrent.ExecutionException;
 
 public class Notes extends AppCompatActivity {
     private Button buttonnote;
@@ -29,5 +38,42 @@ public class Notes extends AppCompatActivity {
             };
 
         });
+        ArrayList<Note> listData = getListData();
+        final ListView listView = (ListView) findViewById(R.id.listViewNotes);
+        listView.setAdapter(new CustomListAdapter_notes(this, listData));
+
+
+    }
+
+
+    public ArrayList<Note> getListData(){
+        try{
+            ConnectionRest connectionRest = new ConnectionRest();
+            connectionRest.setAction("notes");
+            connectionRest.execute("GET");
+            String listJsonObjs = connectionRest.get();
+            if(listJsonObjs != null) {
+                return parse(listJsonObjs);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public ArrayList<Note> parse(final String json) {
+        try {
+            final ArrayList<Note> notes = new ArrayList<>();
+            final JSONArray jNotesArray = new JSONArray(json);
+            for (int i = 0; i < jNotesArray.length(); i++) {
+                notes.add(new Note(jNotesArray.optJSONObject(i)));
+            }
+            return notes;
+        } catch (JSONException e) {
+            Log.v("TAG","[JSONException] e : " + e.getMessage());
+        }
+        return null;
     }
 }
