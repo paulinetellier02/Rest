@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="#F6C2D4"
     android:orientation="vertical"
     android:padding="16dp">
 
@@ -11,27 +12,29 @@
         android:layout_width="144dp"
         android:layout_height="131dp"
         android:layout_gravity="center_horizontal"
-        android:src="@drawable/logo_gestio"
+        android:layout_marginBottom="16dp"
         android:contentDescription="@string/logo_description"
-        android:layout_marginBottom="16dp"/>
+        android:src="@drawable/logo_gestio" />
 
     <EditText
         android:id="@+id/editTextLegende"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/edittext_rounded_background"
+        android:backgroundTint="#F6C070"
         android:hint="@string/legende_hint"
         android:inputType="text"
-        android:background="@drawable/edittext_rounded_background"
-        android:padding="8dp"
-        android:layout_marginBottom="8dp"/>
+        android:padding="8dp" />
 
     <TimePicker
         android:id="@+id/timePickerHeure"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:timePickerMode="spinner"
+        android:layout_height="185dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/edittext_rounded_background"
-        android:layout_marginBottom="8dp"/>
+        android:timePickerMode="spinner"
+        android:translationY="-20dp" />
 
     <RadioGroup
         android:id="@+id/radioGroupPeriodicite"
@@ -43,24 +46,25 @@
             android:id="@+id/radioButtonUneFois"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/periodicite_unefois" />
+            android:text="@string/periodicite_unefois"
+            android:translationY="-10dp" />
 
         <RadioButton
             android:id="@+id/radioButtonTousLesJours"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/periodicite_touslesjours" />
+            android:text="@string/periodicite_touslesjours"
+            android:translationY="-10dp" />
 
     </RadioGroup>
 
     <Button
-        android:id="@+id/buttonCreerRappel"
-        android:layout_width="match_parent"
+        android:id="@+id/button_creer_evenement"
+        android:layout_width="91dp"
         android:layout_height="wrap_content"
-        android:text="@string/creer_rappel_button"
-        android:background="@drawable/button_rounded_background"
-        android:textColor="@android:color/white"
-        android:layout_marginTop="16dp" />
+        android:text="ok"
+        android:translationX="270dp"
+        android:translationY="-55dp" />
 
 </LinearLayout>
 

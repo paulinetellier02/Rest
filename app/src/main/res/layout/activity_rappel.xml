@@ -3,37 +3,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="16dp"
     android:background="@color/pastel_pink">
-
 
 
     <TextView
         android:id="@+id/textViewRappel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/rappel_liste"
+        android:layout_marginBottom="8dp"
+        android:text="Votre liste de rappels :"
         android:textColor="@android:color/white"
-        android:textSize="20sp"
-        android:layout_marginBottom="8dp"/>
+        android:textSize="20sp" />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
-
-        <TableLayout
-            android:id="@+id/tableLayoutRappels"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:stretchColumns="*">
-
-            <!-- Les rappels seront ajoutés dynamiquement ici -->
-
-        </TableLayout>
-
-    </ScrollView>
+    <Button
+        android:id="@+id/button_creer_rappel"
+        android:layout_width="195dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginEnd="108dp"
+        android:backgroundTint="#3CE91E63"
+        android:text="Créer une To do list"
+        android:translationX="-10dp"
+        android:translationY="500dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="637dp" />
 
 </LinearLayout>
     <!--<?xml version="1.0" encoding="utf-8"?>

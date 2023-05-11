@@ -58,6 +58,6 @@
         android:layout_height="wrap_content"
         android:text="ok"
         android:translationX="270dp"
-        android:translationY="-70dp" />
+        android:translationY="-90dp" />
 
 </LinearLayout>

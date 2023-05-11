@@ -43,6 +43,28 @@ public class RegistrationActivity extends AppCompatActivity {
                     connectionRest.execute("CREATE_USER");
                     String token = connectionRest.get();
 
+                    /*ConnectionRest connectionRest = new ConnectionRest();
+                    JSONObject Profil = new JSONObject();
+                    final int id = getIntent().getIntExtra("id",2);
+                    try{
+                        if(id!=0) {
+                            Profil.put("id", id);//getuser pour le bon id
+                        }
+                        System.out.println(userNom.getText());
+                        Profil.put("nom", userNom.getText().toString());
+                        Profil.put("prenom", userprenom.getText().toString());
+                        Profil.put("ielts", userielts.getText().toString());
+                        Profil.put("moyenne", usermoy.getText().toString());
+                        connectionRest.setObj(Profil);
+                        connectionRest.setAction("Profil");
+
+                    // Creation
+                        connectionRest.execute("POST");
+                    }
+                    catch (JSONException e) {
+                        e.printStackTrace();
+                    }*/
+
                     if(token.charAt(0)=='{') {
                         Log.v("LoginActivity", token);
                     }else {

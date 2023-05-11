@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
                     String token = connectionRest.get();
                     Param.getInstance().setToken(token);
 
-                    if(token.charAt(0)=='{') {
+                    if(token.charAt(0)=='{') {//recup id du user
                         Log.v("LoginActivity", token);
                     }else{
                         Log.v("LoginActivity", token);//TODO

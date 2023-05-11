@@ -37,7 +37,7 @@ public class Todolist extends AppCompatActivity {
 
 
 
-        button_Creer_tdl = (Button) findViewById(R.id.button_creer_tdl);
+        button_Creer_tdl = (Button) findViewById(R.id.button_creer_rappel);
 
         button_Creer_tdl.setOnClickListener(new View.OnClickListener() {
             @Override

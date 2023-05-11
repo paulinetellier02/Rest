@@ -111,7 +111,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button_ajouter_rappel"
+        android:id="@+id/button_ajouter_tdl"
         android:layout_width="74dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="158dp"

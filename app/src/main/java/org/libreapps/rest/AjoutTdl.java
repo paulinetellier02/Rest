@@ -30,7 +30,7 @@ public class AjoutTdl extends AppCompatActivity {
         tache2 = findViewById(R.id.tache2);
         tache3 = findViewById(R.id.tache3);
 
-        Button buttonAjouterTdl = findViewById(R.id.button_ajouter_rappel);
+        Button buttonAjouterTdl = findViewById(R.id.button_ajouter_tdl);
         buttonAjouterTdl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -61,7 +61,7 @@ public class AjoutTdl extends AppCompatActivity {
 
 
             //retour vers la page to do list après avoir créer une nouvelle to do list
-            button_Ajouter_tdl = (Button) findViewById(R.id.button_ajouter_rappel);
+            button_Ajouter_tdl = (Button) findViewById(R.id.button_ajouter_tdl);
 
             button_Ajouter_tdl.setOnClickListener(new View.OnClickListener() {
                 @Override

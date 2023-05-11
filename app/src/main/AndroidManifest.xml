@@ -26,9 +26,7 @@
         <activity
             android:name=".AjoutRappel"
             android:exported="false" />
-        <activity
-            android:name=".Agenda"
-            android:exported="false" />
+
         <activity
             android:name=".Todolist"
             android:exported="false" />

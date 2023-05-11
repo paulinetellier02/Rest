@@ -6,6 +6,7 @@ import android.util.Log;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.libreapps.rest.obj.Profil;
 import org.libreapps.rest.obj.User;
 
 import java.io.BufferedReader;
@@ -95,12 +96,12 @@ public class ConnectionRest extends AsyncTask<String, Void, String> {
         return response.toString();
     }
 
-    public ArrayList<User> parse(final String json) {
+    public ArrayList<Profil> parse(final String json) {
         try {
-            final ArrayList<User> products = new ArrayList<>();
+            final ArrayList<Profil> products = new ArrayList<>();
             final JSONArray jProductArray = new JSONArray(json);
             for (int i = 0; i < jProductArray.length(); i++) {
-                products.add(new User(jProductArray.optJSONObject(i)));
+                products.add(new Profil(jProductArray.optJSONObject(i)));
             }
             return products;
         } catch (JSONException e) {

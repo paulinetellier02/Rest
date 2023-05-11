@@ -13,21 +13,23 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:text="            Vos To do list"
-        android:textSize="14sp"
+        android:textSize="16sp"
         tools:layout_editor_absoluteX="119dp"
         tools:layout_editor_absoluteY="40dp" />
 
     <Button
-        android:id="@+id/button_creer_tdl"
+        android:id="@+id/button_creer_rappel"
         android:layout_width="195dp"
         android:layout_height="60dp"
         android:layout_marginStart="108dp"
         android:layout_marginEnd="108dp"
+        android:layout_marginBottom="80dp"
         android:backgroundTint="#3CE91E63"
         android:text="Créer une To do list"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="637dp" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/logoGestio6"

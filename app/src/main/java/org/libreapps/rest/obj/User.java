@@ -9,12 +9,15 @@ public class User {
     private String prenom;
     private String date_naissance;
 
+    private String calendrier;
+
     public User(JSONObject jObject) {
         this.adresse_mail = jObject.optString("Adresse mail");
         this.mdp = jObject.optString("Mot de passe");
         this.nom = jObject.optString("Nom");
         this.prenom = jObject.optString("Prenom");
         this.date_naissance = jObject.optString("Date de naissance");
+        //this.calendrier = jObject.optString("calendrier");
     }
 
     public String getAdresse_mail() {

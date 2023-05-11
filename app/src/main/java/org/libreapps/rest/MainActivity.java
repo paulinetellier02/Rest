@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
             connectionRest.execute("GET");
             String listJsonObjs = connectionRest.get();
             if(listJsonObjs != null) {
-                return connectionRest.parse(listJsonObjs);
+                //return connectionRest.parse(listJsonObjs);
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
