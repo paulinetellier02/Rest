@@ -1,32 +1,22 @@
 package org.libreapps.rest;
-/*
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-
-public class AjoutNote extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ajout_note);
-    }
-}*/
 
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.libreapps.rest.LoginActivity;
 //chaque ligne utilisateur une colonne pour toutes les notes recuperer id user
 public class AjoutNote extends AppCompatActivity {
 
+    private int id;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,18 +37,19 @@ public class AjoutNote extends AppCompatActivity {
             buttonCancel.setText("Supprimer");
             buttonOk.setText("Modifier");
         }
+        id =Param.getInstance().getIdUser();//TODO
 
         buttonCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(noteEditTxt.getText().toString()==" "){
                     try {
-                        ConnectionRest connectionRest = new ConnectionRest();
+                        ConnectionRestNote connectionRest = new ConnectionRestNote();
                         JSONObject list_note = new JSONObject();
                         list_note.put("note:", note);
                         list_note.put("titre:",titre);
                         connectionRest.setObj(list_note);
-                        connectionRest.setAction("note");
+                        connectionRest.setAction("notes");
                         connectionRest.execute("DELETE");
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -72,16 +63,17 @@ public class AjoutNote extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    ConnectionRest connectionRest = new ConnectionRest();
-                    JSONObject user = new JSONObject();
+                    ConnectionRestNote connectionRest = new ConnectionRestNote();
+                    JSONObject list_note = new JSONObject();
 
                     if(noteEditTxt.getText().toString()==" "){
-                        user.put("note",note);
+                        list_note.put("note",note);
                     }
-                    user.put("titre:", titreEditTxt.getText().toString());
-                    user.put("note:", noteEditTxt.getText().toString());
+                    list_note.put("titre:", titreEditTxt.getText().toString());
+                    list_note.put("note:", noteEditTxt.getText().toString());
+                    list_note.put("id",id);
 
-                    connectionRest.setObj(user);
+                    connectionRest.setObj(list_note);
 
                     if(noteEditTxt.getText().toString()==" ") { // Modification
                         connectionRest.execute("PUT");

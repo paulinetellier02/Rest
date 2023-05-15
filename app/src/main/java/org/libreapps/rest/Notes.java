@@ -2,24 +2,30 @@ package org.libreapps.rest;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.content.Intent;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 
+
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.libreapps.rest.obj.Note;
-import org.libreapps.rest.obj.Profil;
+import org.json.JSONObject;
+import org.libreapps.rest.obj.FctNote;
+import org.libreapps.rest.LoginActivity;
+
 
 import java.util.*;
 import java.util.concurrent.ExecutionException;
 
 public class Notes extends AppCompatActivity {
     private Button buttonnote;
+    private int id;
+    private String indice_note,titre;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,17 +44,30 @@ public class Notes extends AppCompatActivity {
             };
 
         });
-        ArrayList<Note> listData = getListData();
+        titre = "aa";//TODO
+        ArrayList<FctNote> listData = getListData();
+        for (int i=0; i<listData.size();i++){
+            //FctNote indice_note = listData.get(i);
+            FctNote auction = listData.get(i);
+            if (titre.equals(auction.getTitre())){
+                System.out.println("oui");
+
+            }
+
+
+        }
         final ListView listView = (ListView) findViewById(R.id.listViewNotes);
-        listView.setAdapter(new CustomListAdapter_notes(this, listData));
+        listView.setAdapter(new CustomListAdapter_notes(this, listData)); //remplie list view
+
+
 
 
     }
 
 
-    public ArrayList<Note> getListData(){
+    public ArrayList<FctNote> getListData(){
         try{
-            ConnectionRest connectionRest = new ConnectionRest();
+            ConnectionRestNote connectionRest = new ConnectionRestNote();
             connectionRest.setAction("notes");
             connectionRest.execute("GET");
             String listJsonObjs = connectionRest.get();
@@ -63,12 +82,12 @@ public class Notes extends AppCompatActivity {
         return null;
     }
 
-    public ArrayList<Note> parse(final String json) {
+    public ArrayList<FctNote> parse(final String json) {
         try {
-            final ArrayList<Note> notes = new ArrayList<>();
+            final ArrayList<FctNote> notes = new ArrayList<>();
             final JSONArray jNotesArray = new JSONArray(json);
             for (int i = 0; i < jNotesArray.length(); i++) {
-                notes.add(new Note(jNotesArray.optJSONObject(i)));
+                notes.add(new FctNote(jNotesArray.optJSONObject(i)));
             }
             return notes;
         } catch (JSONException e) {
@@ -76,4 +95,6 @@ public class Notes extends AppCompatActivity {
         }
         return null;
     }
+
+
 }
