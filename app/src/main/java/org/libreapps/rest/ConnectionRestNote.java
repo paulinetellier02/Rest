@@ -7,7 +7,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.libreapps.rest.obj.FctNote;
-import org.libreapps.rest.obj.Profil;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -101,7 +100,10 @@ public class ConnectionRestNote extends AsyncTask<String, Void, String> {
             final JSONArray jProductArray = new JSONArray(json);
             for (int i = 0; i < jProductArray.length(); i++) {
                 list_note.add(new FctNote(jProductArray.optJSONObject(i)));
+
+
             }
+
             return list_note;
         } catch (JSONException e) {
             Log.v("TAG","[JSONException] e : " + e.getMessage());
@@ -112,6 +114,8 @@ public class ConnectionRestNote extends AsyncTask<String, Void, String> {
     public void setObj(JSONObject jsonObj){
         this.jsonObj = jsonObj;
     }
+
+    public void getObj (JSONObject jsonObj) {this.jsonObj = jsonObj;}
     public void setAction(String monAction){ this.action = monAction;}
 
 

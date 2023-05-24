@@ -1,46 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:maxHeight="55dp"
-    android:translationY="110dp">
+    android:translationY="0dp">
 
     <TextView
-        android:id="@+id/textTitreNote"
+        android:id="@+id/textViewtitre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:gravity="center_vertical|start"
-        android:text="Titre"
-        android:textColor="@color/orange_pastel"
-        android:textSize="18sp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textNote"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="16dp"
+        android:text="username"
+        android:textColor="@color/black"
+        android:gravity="center"
+        app:layout_constraintStart_toEndOf="@+id/textViewnote"
         app:layout_constraintTop_toTopOf="parent"
-        tools:visibility="visible" />
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textNote"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:gravity="center_vertical|start"
-        android:text="Name"
+        android:id="@+id/textViewnote"
+        android:layout_width="98dp"
+        android:layout_height="16dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="104dp"
         android:textColor="@color/black"
-        android:textSize="18sp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textTitreNote"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintEnd_toStartOf="@+id/textViewtitre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

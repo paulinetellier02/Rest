@@ -1,34 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-android:maxHeight="45dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:maxHeight="55dp"
     android:translationY="0dp">
 
-
-    <CheckBox
-        android:id="@+id/checkTDL"
+    <TextView
+        android:id="@+id/textViewEvent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
+        android:translationX="3dp"
         android:translationY="22dp" />
 
     <TextView
-        android:id="@+id/textViewnom"
+        android:id="@+id/textViewDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="tdl"
-        android:translationX="40dp"
+        android:translationX="-25dp"
         android:translationY="22dp" />
 
     <TextView
-        android:id="@+id/textViewTdl"
+        android:id="@+id/textViewHeure"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Legende"
-        android:translationX="-15dp"
+        android:translationX="-22dp"
         android:translationY="22dp" />
 </LinearLayout>

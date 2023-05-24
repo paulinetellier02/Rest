@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="@color/pastel_pink">
+    android:padding="16dp">
+
 
 
     <TextView
@@ -15,22 +16,27 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:text="Votre liste de rappels :"
-        android:textColor="@android:color/white"
+        android:textColor="@color/black"
         android:textSize="20sp" />
 
     <Button
-        android:id="@+id/button_creer_rappel"
+        android:id="@+id/button_creer_rap"
         android:layout_width="195dp"
         android:layout_height="60dp"
         android:layout_marginStart="108dp"
         android:layout_marginEnd="108dp"
         android:backgroundTint="#3CE91E63"
-        android:text="Créer une To do list"
+        android:text="Créer un rappel"
         android:translationX="-10dp"
         android:translationY="500dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="637dp" />
+
+    <ListView
+        android:id="@+id/listviewrap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
 </LinearLayout>
     <!--<?xml version="1.0" encoding="utf-8"?>

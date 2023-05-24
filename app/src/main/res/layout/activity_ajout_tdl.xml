@@ -9,6 +9,14 @@
     android:padding="16dp"
     tools:context=".AjoutTdl">
 
+    <Button
+        android:id="@+id/button_ajt_tdl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ajouter"
+        android:translationX="140dp"
+        android:translationY="400dp" />
+
     <ImageView
         android:id="@+id/logoGestio10"
         android:layout_width="148dp"
@@ -74,56 +82,5 @@
         android:hint="Saisir une légende pour la TLD"
         android:inputType="text" />
 
-    <LinearLayout
-        android:id="@+id/tachesLayout"
-        android:layout_width="395dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/legendeTLD"
-        android:layout_marginTop="43dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/tachesLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tâches :"
-            android:textSize="18sp"
-            android:textStyle="bold" />
-
-        <CheckBox
-            android:id="@+id/tache1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tâche 1" />
-
-        <CheckBox
-            android:id="@+id/tache2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tâche 2" />
-
-        <CheckBox
-            android:id="@+id/tache3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tâche 3" />
-
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/button_ajouter_tdl"
-        android:layout_width="74dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="158dp"
-        android:layout_marginEnd="159dp"
-        android:layout_marginBottom="41dp"
-        android:backgroundTint="#FFB8B8"
-        android:text="OK"
-        android:textColor="#D75F1B"
-        android:textSize="14sp"
-        android:translationY="625dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </RelativeLayout>

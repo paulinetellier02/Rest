@@ -1,7 +1,7 @@
 package org.libreapps.rest;
 
+
 import android.content.Context;
-import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,69 +9,76 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import org.libreapps.rest.obj.User;
+
+
+import org.json.JSONObject;
+import org.libreapps.rest.obj.Rappel;
 
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 public class CustomListAdapter_rap extends BaseAdapter {
 
-    private ArrayList<User> listData;
+    private ArrayList<Rappel> listDataRap;
     private LayoutInflater layoutInflater;
     private Context context;
 
-    public CustomListAdapter_rap(Context aContext, ArrayList<User> listData) {
+    public CustomListAdapter_rap(Context aContext, ArrayList<Rappel> listDataRap) {
         this.context = aContext;
-        this.listData = listData;
+        this.listDataRap = listDataRap;
         layoutInflater = LayoutInflater.from(aContext);
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
-        ViewHolder holder;
-        if (convertView == null) {
-            convertView = layoutInflater.inflate(R.layout.activity_custom_list_view, null);
-            holder = new ViewHolder();
-            holder.adresse_mail = (TextView) convertView.findViewById(R.id.textTitreNote);
-            holder.mdp = (TextView) convertView.findViewById(R.id.textPrice);
-            holder.nom = (TextView) convertView.findViewById(R.id.textNote);
-            holder.prenom = (TextView) convertView.findViewById(R.id.textType);
-            holder.date_naissance = (TextView) convertView.findViewById(R.id.textPrice);
-            convertView.setTag(holder);
-        } else {
-            holder = (ViewHolder) convertView.getTag();
-            Log.v("position",""+position);
+        ConnectionRest_cal connectionRest = new ConnectionRest_cal();
+        connectionRest.setAction("rappel");
+        connectionRest.execute("GET");
+        try {
+
+            String listJsonObjsrap = connectionRest.get();
+            JSONObject list_rap = new JSONObject();
+
+            Log.d("JSON RAPPEL", listJsonObjsrap.toString());
+
+            //holder.Id.setText(view_notes.getId());
+
+
+            //Log.v("Note :",""+view_notes.getNote()+" "+view_notes.getTitre()+"");
+
+            convertView = layoutInflater.inflate(R.layout.activity_custom_list_view_rappel, null);
+            TextView legende = (TextView) convertView.findViewById(R.id.textViewLegende2);
+            TextView periode = (TextView) convertView.findViewById(R.id.textViewDate2);
+            TextView heure = (TextView) convertView.findViewById(R.id.textViewHeure2);
+            //String valeur = listJsonObjs.getString();
+            //Event.setText(listJsonObjsevent); //affichage
+            //titre.setText("bonjour");
+            //legende.setText(listJsonObjsrap);
+            //periode.setText(listJsonObjsrap);
+           // heure.setText("heure");
+            legende.setText("test");
+            return convertView;
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-
-        if(position % 2 == 0){
-            convertView.setBackgroundColor(Color.rgb(150,245,170));
-        }
-
-        User user = this.listData.get(position);
-        holder.adresse_mail.setText(""+user.getAdresse_mail());
-        holder.mdp.setText(user.getMdp());
-        holder.nom.setText(user.getNom());
-        holder.prenom.setText(""+user.getPrenom());
-        holder.date_naissance.setText(""+user.getDate_naissance());
-        Log.v("CUSTOM",""+user.getNom()+" "+user.getPrenom()+" "+user.getAdresse_mail()+" bien registré !");
-
-        return convertView;
+        return null;
     }
 
     static class ViewHolder {
-        TextView adresse_mail;
-        TextView mdp;
-        TextView nom;
-        TextView prenom;
-        TextView date_naissance;
-
+        TextView titre;
+        TextView note;
+        TextView Id;
     }
 
     public int getCount() {
-        return (listData!=null)?listData.size():0;
+        return (listDataRap !=null)? listDataRap.size():0;
     }
     public Object getItem(int position) {
-        return listData.get(position);
+        return listDataRap.get(position);
     }
     public long getItemId(int position) {
         return position;
     }
 }
+

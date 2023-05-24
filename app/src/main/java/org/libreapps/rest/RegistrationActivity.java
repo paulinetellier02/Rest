@@ -3,6 +3,7 @@ package org.libreapps.rest;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.EditText;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Base64;
 import java.util.concurrent.ExecutionException;
 
 public class RegistrationActivity extends AppCompatActivity {
@@ -43,32 +45,26 @@ public class RegistrationActivity extends AppCompatActivity {
                     connectionRest.execute("CREATE_USER");
                     String token = connectionRest.get();
 
-                    /*ConnectionRest connectionRest = new ConnectionRest();
-                    JSONObject Profil = new JSONObject();
-                    final int id = getIntent().getIntExtra("id",2);
-                    try{
-                        if(id!=0) {
-                            Profil.put("id", id);//getuser pour le bon id
-                        }
-                        System.out.println(userNom.getText());
-                        Profil.put("nom", userNom.getText().toString());
-                        Profil.put("prenom", userprenom.getText().toString());
-                        Profil.put("ielts", userielts.getText().toString());
-                        Profil.put("moyenne", usermoy.getText().toString());
-                        connectionRest.setObj(Profil);
-                        connectionRest.setAction("Profil");
-
-                    // Creation
-                        connectionRest.execute("POST");
-                    }
-                    catch (JSONException e) {
-                        e.printStackTrace();
-                    }*/
+                    Param.getInstance().setToken(token);
 
                     if(token.charAt(0)=='{') {
                         Log.v("LoginActivity", token);
                     }else {
-                        Intent intent = new Intent(RegistrationActivity.this, EditActivity.class);
+                            Log.v("RegistrationActivity", token);//TODO
+                            String tabTok[] = token.split("\\.");
+                            String jsonPayload =  "";
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                                jsonPayload = new String(Base64.getDecoder().decode(tabTok[1]));
+                            }
+                            Log.v("Payload", jsonPayload);//TODO
+                            JSONObject jsonObj = new JSONObject(jsonPayload);
+
+                            Param.getInstance().setIdUser(jsonObj.optInt("usr"));
+                            Param.getInstance().setToken(token);
+
+                            Log.v("IdUser", ""+Param.getInstance().getIdUser());//TODO
+
+                        Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
                         intent.putExtra("token", token);
                         startActivity(intent);
                     }
@@ -79,6 +75,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 } catch (ExecutionException e) {
                     e.printStackTrace();
                 }
+                //return null;
             }
         });
     }

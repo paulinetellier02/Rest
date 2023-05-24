@@ -2,10 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:backgroundTint="#F6C2D4"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:translationY="20dp">
 
     <ImageView
         android:id="@+id/logoGestio6"
@@ -27,44 +28,49 @@
         android:inputType="text"
         android:padding="8dp" />
 
-    <TimePicker
+    <!-- <TimePicker
         android:id="@+id/timePickerHeure"
         android:layout_width="match_parent"
         android:layout_height="185dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/edittext_rounded_background"
         android:timePickerMode="spinner"
-        android:translationY="-20dp" />
+        android:translationY="-20dp" />-->
 
-    <RadioGroup
-        android:id="@+id/radioGroupPeriodicite"
+    <EditText
+        android:id="@+id/editTextTime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:ems="10"
+        android:inputType="time" />
 
-        <RadioButton
-            android:id="@+id/radioButtonUneFois"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/periodicite_unefois"
-            android:translationY="-10dp" />
-
-        <RadioButton
-            android:id="@+id/radioButtonTousLesJours"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/periodicite_touslesjours"
-            android:translationY="-10dp" />
-
-    </RadioGroup>
+    <CheckedTextView
+        android:id="@+id/checkedTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="Une fois" />
 
     <Button
         android:id="@+id/button_creer_evenement"
         android:layout_width="91dp"
         android:layout_height="wrap_content"
         android:text="ok"
-        android:translationX="270dp"
-        android:translationY="-55dp" />
+        android:translationX="270dp" />
+
+    <CheckedTextView
+        android:id="@+id/checkedTextView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="Tous les jours"
+        android:textSize="14sp"
+        android:translationY="-23dp" />
+
+    <!--<ListView
+        android:id="@+id/listviewRappels"
+        android:layout_width="275dp"
+        android:layout_height="142dp" />-->
 
 </LinearLayout>
 

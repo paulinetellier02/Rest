@@ -15,8 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
-import org.libreapps.rest.obj.Event;
-import org.libreapps.rest.obj.FctNote;
+import org.libreapps.rest.obj.Rappel;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
@@ -24,40 +23,39 @@ import java.util.concurrent.ExecutionException;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-public class Calendrier extends AppCompatActivity {
-    private Button buttoncal;
+public class Rappels extends AppCompatActivity {
+    private Button buttonrap;
     private int id;
-    private String nom,heure,date;
+    private String legende,heure,periode;
 
-    private ArrayList<Event> listDatacal;
+    private ArrayList<Rappel> listDatarap;
     private ArrayList<String> rappel;
     private ListView listView;
-    private ArrayAdapter<Event> listAdapter;
+    private ArrayAdapter<Rappel> listAdapter;
     private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_calendrier);
+        setContentView(R.layout.activity_rappel);
 
 
 
-        ArrayList<Event> listDatacal = getListData();
-        final ListView listView = (ListView) findViewById(R.id.listview_cal);
+        ArrayList<Rappel> listDatarap = getListData();
+        final ListView listView = (ListView) findViewById(R.id.listviewrap);
 
-        listView.setAdapter(new CustomListAdapter_cal(this, listDatacal));
+        listView.setAdapter(new CustomListAdapter_rap(this, listDatarap));
 
-
-        buttoncal = findViewById(R.id.button_ajouter_event); //peut etre tdl le bouton si bug
+        buttonrap = findViewById(R.id.button_creer_rap); //peut etre tdl le bouton si bug
 
 //listView = findViewById(R.id.listViewNotes);
         id =Param.getInstance().getIdUser();
 //System.out.println(id);
 
-        buttoncal.setOnClickListener(new View.OnClickListener() {
+        buttonrap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Calendrier.this, AjoutCalendrier.class);
+                Intent intent = new Intent(Rappels.this, AjoutRappel.class);
                 startActivity(intent);
                 //return null;
             }
@@ -67,24 +65,24 @@ public class Calendrier extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> a, View v, int position, long id) {
                 Object o = listView.getItemAtPosition(position);
-                Event upload = (Event) o;
-                Intent intent = new Intent(Calendrier.this, Calendrier.class);
+                Rappel upload = (Rappel) o;
+                Intent intent = new Intent(Rappels.this, AjoutRappel.class);
                 intent.putExtra("id", upload.getId());
-                intent.putExtra("nom event", upload.getNom_event());
+                intent.putExtra("legende", upload.getLegend());
                 intent.putExtra("heure", upload.getHeure());
-                intent.putExtra("date", upload.getDate());
+                intent.putExtra("periode", upload.getPeriode());
                 //listView.setVisibility(View.VISIBLE);
                 startActivity(intent);
             }
         });
     }
 
-    public ArrayList<Event> getListData(){
+    public ArrayList<Rappel> getListData(){
         try{
-            ConnectionRest_cal connectionRestcal = new ConnectionRest_cal();
-            connectionRestcal.setAction("event");
-            connectionRestcal.execute("GET");
-            String listJsonObjs = connectionRestcal.get();
+            ConnectionRest_rap connectionRestrap = new ConnectionRest_rap();
+            connectionRestrap.setAction("rappel");
+            connectionRestrap.execute("GET");
+            String listJsonObjs = connectionRestrap.get();
             if(listJsonObjs != null) {
                 System.out.println(listJsonObjs);
 
@@ -92,7 +90,7 @@ public class Calendrier extends AppCompatActivity {
                     System.out.println(listJsonObjs);
 
                 }
-                return connectionRestcal.parse(listJsonObjs);
+           return connectionRestrap.parse(listJsonObjs);
 
             }
         } catch (InterruptedException e) {
@@ -122,7 +120,7 @@ public class Calendrier extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
     public String toString() {
-        return nom;
+        return legende;
     }
 
 

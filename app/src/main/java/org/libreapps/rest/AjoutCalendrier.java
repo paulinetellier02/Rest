@@ -1,76 +1,100 @@
 package org.libreapps.rest;
 
+import android.app.TimePickerDialog;
+import android.content.Intent;
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.graphics.Color;
-import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.Spinner;
-import android.widget.TimePicker;
-import android.widget.Toast;
+import android.widget.ListView;
 
-import java.util.Calendar;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.libreapps.rest.LoginActivity;
+import org.libreapps.rest.RegistrationActivity;
+import org.libreapps.rest.obj.Event;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+
+//chaque ligne utilisateur une colonne pour toutes les notes recuperer id user
 public class AjoutCalendrier extends AppCompatActivity {
-    private EditText editTextNomEvenement;
-    private DatePicker datePickerEvenement;
-    private Button buttonCouleurEvenement;
-    private Button buttonCreerEvenement;
-    private Spinner spinnerCouleurEvenement;
-    private ArrayAdapter<CharSequence> couleurAdapter;
-    private TimePicker timePickerEvenement;
 
+    private int id;
+    private ArrayList listecal;
+    private Button buttonOk;
 
-    private int selectedColor = Color.RED; // Couleur par défaut (rouge)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajout_calendier);
-
-        // Récupérer les références des vues
-        editTextNomEvenement = findViewById(R.id.editText_nom_evenement);
-        datePickerEvenement = findViewById(R.id.datePicker_evenement);
-        buttonCreerEvenement = findViewById(R.id.button_creer_evenement);
-        timePickerEvenement = findViewById(R.id.timePicker_evenement);
-
-        // Définir le listener pour le bouton de choix de couleur
+        String nom = getIntent().getStringExtra("nom");
+        String heure = getIntent().getStringExtra("heure ");
+        String date = getIntent().getStringExtra("date ");
 
 
-        // Définir le listener pour le bouton de création d'événement
-        buttonCreerEvenement.setOnClickListener(new View.OnClickListener() {
+        final EditText nomEditTxt = (EditText) findViewById(R.id.editText_nom_evenement);
+        final EditText heureEditTxt = (EditText) findViewById(R.id.editTextTime2);
+        final EditText dateEditTxt = (EditText) findViewById(R.id.editTextDate2);
+        Button buttonOk = (Button) findViewById(R.id.button_creer_evenement);
+
+        if(nomEditTxt.getText().toString()==" ") {
+            nomEditTxt.setText("Tapez le titre...");
+            //nomEditTxt.setText("Tapez votre texte...");
+            buttonOk.setText("Modifier");
+        }
+        id =Param.getInstance().getIdUser();//TODO
+
+        buttonOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Récupérer les valeurs saisies par l'utilisateur
-                String nomEvenement = editTextNomEvenement.getText().toString();
-                int jour = datePickerEvenement.getDayOfMonth();
-                int mois = datePickerEvenement.getMonth();
-                int annee = datePickerEvenement.getYear();
-                int heure = timePickerEvenement.getHour();
-                int minute = timePickerEvenement.getMinute();
-                // Ici, vous pouvez utiliser les valeurs récupérées pour créer l'événement
-                // par exemple, en utilisant une bibliothèque de calendrier ou en enregistrant les informations dans une base de données
+                try {
+                    ConnectionRest_cal connectionRest = new ConnectionRest_cal();
+                    JSONObject listecal = new JSONObject();
 
-                // Dans cet exemple, nous affichons simplement les valeurs récupérées
-                String dateEvenement = jour + "/" + (mois + 1) + "/" + annee;
-                String message = "Nom de l'événement : " + nomEvenement + "\n"
-                        + "Date de l'événement : " + dateEvenement + "\n"
-                        + "Couleur de l'événement : " + String.format("#%06X", (0xFFFFFF & selectedColor));
+                    if(nomEditTxt.getText().toString()==" "){
 
-                // Afficher un message pour vérifier les valeurs
-                Toast.makeText(AjoutCalendrier.this, message, Toast.LENGTH_SHORT).show();
+                        listecal.put("calendrier",nom);
+                    }
+                    listecal.put("nom_event:", nomEditTxt.getText().toString());
+                    listecal.put("date:", dateEditTxt.getText().toString());
+                    listecal.put("heure:", heureEditTxt.getText().toString());
+                    listecal.put("ID:",id);
+
+                    System.out.println(nomEditTxt.getText().toString());
+                    //System.out.println(legendeEditTxt.getText().toString());
+                    //List<String> listeRap = Arrays.asList(legendeEditTxt.getText().toString());
+                    //System.out.println(listeRap);
+                    //System.out.println(listerappel);
+
+
+
+
+                    connectionRest.setObj(listecal);
+
+                    if(nomEditTxt.getText().toString()==" ") { // Modification
+                        connectionRest.execute("PUT");
+                    }else{ // Creation
+                        connectionRest.execute("POST");
+                    }
+                    Intent intent = new Intent(AjoutCalendrier.this, Calendrier.class);
+                    startActivity(intent);
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                //return null;
             }
         });
-
-
-
     }
 }
-

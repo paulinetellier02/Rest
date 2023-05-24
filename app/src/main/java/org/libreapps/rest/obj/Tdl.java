@@ -1,13 +1,21 @@
 package org.libreapps.rest.obj;
 
+import android.widget.ListView;
+
 import org.json.JSONObject;
+import org.libreapps.rest.R;
+
+import java.util.ArrayList;
 
 public class Tdl {
-    private final int id ;
-    private final String legende;
-    private final String nom;
+    private  int id ;
+    private  String legende;
+    private  String nom;
 
 
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public Tdl(JSONObject jObject) {
         this.id = jObject.optInt("id");
@@ -16,6 +24,18 @@ public class Tdl {
 
     }
 
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getLegende() {
+        return legende;
+    }
+
+    public void setLegende(String legende) {
+        this.legende = legende;
+    }
 
     public int getId() {
         return id; }

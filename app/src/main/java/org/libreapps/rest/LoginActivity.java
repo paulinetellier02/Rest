@@ -33,8 +33,11 @@ public class LoginActivity extends AppCompatActivity {
         buttonLogin = (Button)findViewById(R.id.button_connexion);
 
 
-        userEmail.setText("pauline.tellier@esme.fr");
-        userPassword.setText("Ponchet02!");
+        //userEmail.setText("pauline.tellier@esme.fr");
+        //userPassword.setText("Ponchet02!");
+
+        userEmail.setText("E@gmail.com");
+        userPassword.setText("innovation");
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
                     String token = connectionRest.get();
                     Param.getInstance().setToken(token);
 
-                    if(token.charAt(0)=='{') {//recup id du user
+                    if(token.charAt(0)=='{') {//if(token.charAt(0)=='{') {//recup id du user
                         Log.v("LoginActivity", token);
                     }else{
                         Log.v("LoginActivity", token);//TODO
@@ -80,6 +83,7 @@ public class LoginActivity extends AppCompatActivity {
                 } catch (ExecutionException e) {
                     e.printStackTrace();
                 }
+                //return null;
             }
         });
     }

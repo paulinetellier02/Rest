@@ -1,10 +1,10 @@
 package org.libreapps.rest;
-
+/* cours d'avant
 import android.os.Bundle;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
-/*
+
 import com.google.android.material.snackbar.Snackbar;
 
 import org.libreapps.rest.databinding.ActivityMainBinding;
@@ -40,49 +40,45 @@ public class MainActivity extends AppCompatActivity {
 */
 
 
-
 import android.content.Intent;
 import android.os.Bundle;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import org.libreapps.rest.obj.User;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import org.libreapps.rest.obj.Tdl;
 
 import java.util.ArrayList;
-import java.util.concurrent.ExecutionException;
-/*
+import java.util.concurrent.ExecutionException;/*
 
-public class MainActivity extends AppCompatActivity {
+
+public class MainActivityTDL extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList<User> listData = getListData();
+        ArrayList<Tdl> listData = getListData();
         final ListView listView = (ListView) findViewById(R.id.listView);
-        listView.setAdapter(new CustomListAdapter(this, listData));
+        listView.setAdapter(new CustomListAdapter_tdl(this, listData));
 
         // When the user clicks on the ListItem
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> a, View v, int position, long id) {
                 Object o = listView.getItemAtPosition(position);
-                User upload = (User) o;
-                Intent intent = new Intent(MainActivity.this, EditActivity.class);
-                intent.putExtra("Mot de passe", upload.getMdp());
+                Tdl upload = (Tdl) o;
+                Intent intent = new Intent(MainActivityTDL.this, EditActivity.class);
+                intent.putExtra("Mot de passe", upload.getLegende());
                 intent.putExtra("Nom", upload.getNom());
-                intent.putExtra("Prenom", upload.getPrenom());
-                intent.putExtra("Adresse mail", upload.getAdresse_mail());
-                intent.putExtra("Date de naissance", upload.getDate_naissance());
+
                 startActivity(intent);
             }
         });
@@ -91,13 +87,13 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, EditActivity.class);
+                Intent intent = new Intent(MainActivityTDL.this, EditActivity.class);
                 startActivity(intent);
             }
         });
     }
 
-    public ArrayList<User> getListData(){
+    public ArrayList<Tdl> getListData(){
         try{
             ConnectionRest connectionRest = new ConnectionRest();
             connectionRest.execute("GET");

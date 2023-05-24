@@ -7,9 +7,9 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="org.libreapps.rest.FirstFragment"
+        android:name="org.libreapps.rest.AccueilActivity"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/activity_acceuil">
 
         <action
             android:id="@+id/action_FirstFragment_to_SecondFragment"
